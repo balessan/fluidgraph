@@ -61,6 +61,7 @@ data[3] = {
               { source: 4, target: 6 },
               { source: 4, target: 7 },
               { source: 4, target: 8 },
+              { source: 7, target: 8 },
       ]
 }
 
