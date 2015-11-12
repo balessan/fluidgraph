@@ -835,10 +835,13 @@ FluidGraph.prototype.loadLocalGraph = function(graphName) {
   if (thisGraph.config.debug) console.log("loadLocalGraph start");
 
   var localGraph = localStorage.getItem(thisGraph.config.version+"|"+graphName);
-  thisGraph.d3data = thisGraph.jsonD3ToD3Data(JSON.parse(localGraph)); //ExternalGraph or localGraph
-  thisGraph.graphName = graphName;
-  thisGraph.changeGraphName();
-
+  if (localGraph)
+  {
+    thisGraph.d3data = thisGraph.jsonD3ToD3Data(JSON.parse(localGraph)); //ExternalGraph or localGraph
+    thisGraph.graphName = graphName;
+    thisGraph.changeGraphName();
+  }
+  
   if (thisGraph.config.debug) console.log("loadLocalGraph end");
 }
 
